@@ -92,7 +92,7 @@ public class EarthquakeMap {
                             EarthquakeEvent event = earthquakeTable.get(graphics.get(0));
                             Alert dialog = new Alert(Alert.AlertType.INFORMATION);
                             dialog.setHeaderText(null);
-                            dialog.setTitle("Earthquake Detail");
+                            dialog.setTitle("Earthquake Detail - " + event.getDetail().getPlace());
                             dialog.setContentText(event.toString());
                             dialog.showAndWait();
                         }
