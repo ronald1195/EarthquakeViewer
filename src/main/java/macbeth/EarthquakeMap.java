@@ -62,13 +62,16 @@ public class EarthquakeMap {
 
         // create points for each earthquake
         for (EarthquakeEvent event : earthquakeList.getEarthquakes()) {
-            Point point = new Point(event.getPoint().getLongitude(), event.getPoint().getLatitude(), SpatialReferences.getWgs84());
-            SimpleMarkerSymbol dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.RED), 12);
-            Graphic graphic = new Graphic(point, dot);
-            graphicsOverlay.getGraphics().add(graphic);
+            if(event.getDetail().getMag() >= 2.0) {
 
-            // Add dot and earthquake data to the earthquake table
-            earthquakeTable.put(graphic, event);
+                Point point = new Point(event.getPoint().getLongitude(), event.getPoint().getLatitude(), SpatialReferences.getWgs84());
+                SimpleMarkerSymbol dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.RED), 12);
+                Graphic graphic = new Graphic(point, dot);
+                graphicsOverlay.getGraphics().add(graphic);
+
+                // Add dot and earthquake data to the earthquake table
+                earthquakeTable.put(graphic, event);
+            }
         }
 
         mapView.setOnMouseClicked(e -> {
