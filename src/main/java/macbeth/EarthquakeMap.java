@@ -23,6 +23,8 @@ import java.util.Map;
 /**
  * Maintain the ARCGis Map and the markers for all earthquakes.  ALso includes the listener
  * for mouse clicks to display earthquake information.
+ *
+ * https://developers.arcgis.com/java/latest/
  */
 public class EarthquakeMap {
 
