@@ -22,7 +22,7 @@ public class EarthquakeLoader {
     public void loadEarthquakes() {
         try {
             // Create a stream to the URL
-            URL url = new URL("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson");
+            URL url = new URL("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
