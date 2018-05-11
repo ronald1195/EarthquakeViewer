@@ -49,7 +49,7 @@ public class EarthquakeMap {
      */
     public void createMap(EarthquakeList earthquakeList) {
         // create a ArcGISMap with the a Basemap instance with an Imagery base layer
-        ArcGISMap map = new ArcGISMap(Basemap.createTopographic());
+        ArcGISMap map = new ArcGISMap(Basemap.createOpenStreetMap());
 
         // create graphics overlay and add it to the mapview
         mapView = new MapView();
@@ -92,7 +92,7 @@ public class EarthquakeMap {
                             EarthquakeEvent event = earthquakeTable.get(graphics.get(0));
                             Alert dialog = new Alert(Alert.AlertType.INFORMATION);
                             dialog.setHeaderText(null);
-                            dialog.setTitle("Earthquake Detail - " + event.getDetail().getPlace());
+                            dialog.setTitle("Earthquake Detail");
                             dialog.setContentText(event.toString());
                             dialog.showAndWait();
                         }
