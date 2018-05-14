@@ -10,6 +10,7 @@ public class EarthquakeDetail {
     private String place;
     private float mag;
     private long time;
+    private String alert;
 
     /**
      * Place or location of the earthquake
@@ -36,5 +37,14 @@ public class EarthquakeDetail {
      */
     public long getTime() {
         return time;
+    }
+
+    /**
+     * Alert (green, yellow, orange, or red) assigned for the earthquake
+     *
+     * @return alert
+     */
+    public String getAlert() {
+        return alert;
     }
 }

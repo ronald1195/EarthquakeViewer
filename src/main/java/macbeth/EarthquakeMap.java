@@ -49,6 +49,7 @@ public class EarthquakeMap {
      */
     public void createMap(EarthquakeList earthquakeList) {
         // create a ArcGISMap with the a Basemap instance with an Imagery base layer
+        // Here is a list of all the basemaps that arcgis uses: https://developers.arcgis.com/java/latest/api-reference/reference/com/esri/arcgisruntime/mapping/Basemap.html
         ArcGISMap map = new ArcGISMap(Basemap.createOpenStreetMap());
 
         // create graphics overlay and add it to the mapview
@@ -106,6 +107,10 @@ public class EarthquakeMap {
 
         // Add arcgis map to the view
         mapView.setMap(map);
+    }
+
+    public int getEarthquakeCount() {
+        return 0; // TODO: Need to return the size of the earthquakeTable map
     }
 
 }

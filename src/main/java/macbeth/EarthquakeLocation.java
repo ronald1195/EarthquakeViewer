@@ -10,6 +10,8 @@ import java.util.List;
 public class EarthquakeLocation {
     private List<Float> coordinates;
 
+    private long depth;
+
     /**
      * Longitude of the earthquake.
      *
@@ -26,6 +28,15 @@ public class EarthquakeLocation {
      */
     public float getLatitude() {
         return coordinates.get(1);
+    }
+
+    /**
+     * Depth of the earthquake
+     *
+     * @return - The depth
+     */
+    public long getDepth() {
+        return 0; // Need to fix this... https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
     }
 
 }

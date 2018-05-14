@@ -22,6 +22,7 @@ public class EarthquakeLoader {
     public void loadEarthquakes() {
         try {
             // Create a stream to the URL
+            // Here is where I found the JSON streams: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
             URL url = new URL("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");

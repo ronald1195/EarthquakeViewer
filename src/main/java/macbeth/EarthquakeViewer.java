@@ -28,10 +28,9 @@ public class EarthquakeViewer extends Application {
         StackPane stackPane = new StackPane();
         Scene scene = new Scene(stackPane);
 
-        // set title, size, and add scene to stage
-        stage.setTitle("Earthquake Viewer");
-        stage.setWidth(900);
-        stage.setHeight(800);
+        // set size, and add scene to stage
+        stage.setWidth(400);
+        stage.setHeight(400);
         stage.setScene(scene);
         stage.show();
 
@@ -42,6 +41,7 @@ public class EarthquakeViewer extends Application {
         map = new EarthquakeMap();
         map.createMap(loader.getEarthquakeList());
         stackPane.getChildren().add(map.getMapView());
+        stage.setTitle("Earthquake Viewer - " + map.getEarthquakeCount() + " Earthquakes Displayed");
     }
 
 
