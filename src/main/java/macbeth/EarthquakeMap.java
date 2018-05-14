@@ -64,7 +64,7 @@ public class EarthquakeMap {
         // create points for each earthquake
         for (EarthquakeEvent event : earthquakeList.getEarthquakes()) {
             Point point = new Point(event.getPoint().getLongitude(), event.getPoint().getLatitude(), SpatialReferences.getWgs84());
-            SimpleMarkerSymbol dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.SQUARE, ColorUtil.colorToArgb(Color.RED), 12);
+            SimpleMarkerSymbol dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.RED), 12);
             Graphic graphic = new Graphic(point, dot);
             graphicsOverlay.getGraphics().add(graphic);
 
