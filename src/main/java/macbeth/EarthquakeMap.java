@@ -110,7 +110,7 @@ public class EarthquakeMap {
     }
 
     public int getEarthquakeCount() {
-        return 0; // TODO: Need to return the size of the earthquakeTable map
+        return earthquakeTable.size();
     }
 
 }
