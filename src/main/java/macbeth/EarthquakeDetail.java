@@ -1,5 +1,9 @@
 package macbeth;
 
+
+import java.awt.*;
+import java.util.ArrayList;
+
 /**
  * Contains the detailed earthquake information from the USGS Earthquake JSON
  *
@@ -11,6 +15,7 @@ public class EarthquakeDetail {
     private float mag;
     private long time;
     private String alert;
+    private ArrayList<Float> coordinates;
 
     /**
      * Place or location of the earthquake
@@ -46,5 +51,13 @@ public class EarthquakeDetail {
      */
     public String getAlert() {
         return alert;
+    }
+
+    public ArrayList<Float> getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(ArrayList<Float> coordinates) {
+        this.coordinates = coordinates;
     }
 }

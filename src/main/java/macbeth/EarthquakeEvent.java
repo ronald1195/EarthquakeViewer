@@ -39,6 +39,8 @@ public class EarthquakeEvent {
         Date date = new Date(properties.getTime());
         output += "Time: " + date.toString() + "\n";
         output += "Magnitude: " + properties.getMag() + "\n";
+        output += "Latitude: " + properties.getCoordinates().get(0) + "\n";
+        output += "Longitude: " + properties.getCoordinates().get(1) + "\n";
         return output;
     }
 
