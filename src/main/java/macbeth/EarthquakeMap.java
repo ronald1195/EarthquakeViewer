@@ -63,8 +63,15 @@ public class EarthquakeMap {
 
         // create points for each earthquake
         for (EarthquakeEvent event : earthquakeList.getEarthquakes()) {
+            if (event.getDetail().getMag() < 2.0)
+                continue;
             Point point = new Point(event.getPoint().getLongitude(), event.getPoint().getLatitude(), SpatialReferences.getWgs84());
-            SimpleMarkerSymbol dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.RED), 12);
+            SimpleMarkerSymbol dot;
+            if (event.getDetail().getMag() < 4.0)
+                dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.BLUE), 12);
+            else
+                dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.RED), 12);
+
             Graphic graphic = new Graphic(point, dot);
             graphicsOverlay.getGraphics().add(graphic);
 
@@ -94,7 +101,8 @@ public class EarthquakeMap {
                             Alert dialog = new Alert(Alert.AlertType.INFORMATION);
                             dialog.setHeaderText(null);
                             dialog.setTitle("Earthquake Detail");
-                            dialog.setContentText(event.toString());
+                            if (event != null)
+                                dialog.setContentText(event.toString());
                             dialog.showAndWait();
                         }
                     } catch (Exception ex) {

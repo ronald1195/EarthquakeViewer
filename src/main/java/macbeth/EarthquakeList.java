@@ -10,6 +10,9 @@ import java.util.List;
 public class EarthquakeList {
     private List<EarthquakeEvent> features;
 
+    public EarthquakeList() {
+    }
+
     /**
      * Get the full earthquake list
      *

@@ -1,6 +1,10 @@
 package macbeth;
 
+import com.sun.org.apache.xpath.internal.functions.FuncRound;
+
 import java.util.List;
+
+import static java.lang.Math.round;
 
 /**
  * Contains the coordinate information from the USGS Earthquake JSON
@@ -11,6 +15,9 @@ public class EarthquakeLocation {
     private List<Float> coordinates;
 
     private long depth;
+
+    public EarthquakeLocation() {
+    }
 
     /**
      * Longitude of the earthquake.
@@ -36,7 +43,8 @@ public class EarthquakeLocation {
      * @return - The depth
      */
     public long getDepth() {
-        return 0; // Need to fix this... https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+        return round(coordinates.get(2));
+        // return 0; // Need to fix this... https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
     }
 
 }

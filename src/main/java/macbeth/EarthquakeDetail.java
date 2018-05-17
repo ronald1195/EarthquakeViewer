@@ -15,7 +15,10 @@ public class EarthquakeDetail {
     private float mag;
     private long time;
     private String alert;
-    private ArrayList<Float> coordinates;
+    private EarthquakeLocation coordinates;
+
+    public EarthquakeDetail() {
+    }
 
     /**
      * Place or location of the earthquake
@@ -53,11 +56,11 @@ public class EarthquakeDetail {
         return alert;
     }
 
-    public ArrayList<Float> getCoordinates() {
+    public EarthquakeLocation getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(ArrayList<Float> coordinates) {
+    public void setCoordinates(EarthquakeLocation coordinates) {
         this.coordinates = coordinates;
     }
 }

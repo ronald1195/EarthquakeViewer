@@ -11,6 +11,17 @@ public class EarthquakeEvent {
     private EarthquakeDetail properties;
     private EarthquakeLocation geometry;
 
+    public EarthquakeEvent() {
+    }
+
+    public void setProperties(EarthquakeDetail properties) {
+        this.properties = properties;
+    }
+
+    public void setGeometry(EarthquakeLocation geometry) {
+        this.geometry = geometry;
+    }
+
     /**
      * Detail of the earthquake
      *
@@ -35,13 +46,20 @@ public class EarthquakeEvent {
      * @return String
      */
     public String toString() {
-        String output = "Location: " + properties.getPlace() + "\n";
-        Date date = new Date(properties.getTime());
-        output += "Time: " + date.toString() + "\n";
-        output += "Magnitude: " + properties.getMag() + "\n";
-        output += "Latitude: " + properties.getCoordinates().get(0) + "\n";
-        output += "Longitude: " + properties.getCoordinates().get(1) + "\n";
-        return output;
+        try {
+            String output = "Location: " + properties.getPlace() + "\n";
+            Date date = new Date(properties.getTime());
+            output += "Time: " + date.toString() + "\n";
+            output += "Magnitude: " + properties.getMag() + "\n";
+            output += "Latitude: " + geometry.getLatitude()/*properties.getCoordinates().getLatitude()*/ + "\n";
+            output += "Longitude: " + geometry.getLongitude()/*properties.getCoordinates().getLongitude()*/ + "\n";
+            output += "Depth: " + geometry.getDepth()/*properties.getCoordinates().getLongitude()*/ + "\n";
+            return output;
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
 }
