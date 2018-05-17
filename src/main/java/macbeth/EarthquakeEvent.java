@@ -11,17 +11,6 @@ public class EarthquakeEvent {
     private EarthquakeDetail properties;
     private EarthquakeLocation geometry;
 
-    public EarthquakeEvent() {
-    }
-
-    public void setProperties(EarthquakeDetail properties) {
-        this.properties = properties;
-    }
-
-    public void setGeometry(EarthquakeLocation geometry) {
-        this.geometry = geometry;
-    }
-
     /**
      * Detail of the earthquake
      *
@@ -54,6 +43,7 @@ public class EarthquakeEvent {
             output += "Latitude: " + geometry.getLatitude()/*properties.getCoordinates().getLatitude()*/ + "\n";
             output += "Longitude: " + geometry.getLongitude()/*properties.getCoordinates().getLongitude()*/ + "\n";
             output += "Depth: " + geometry.getDepth()/*properties.getCoordinates().getLongitude()*/ + "\n";
+            output += "Alert: " + properties.getAlert() + "\n";
             return output;
         } catch (NullPointerException e) {
             e.printStackTrace();
