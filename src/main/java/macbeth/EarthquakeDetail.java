@@ -15,7 +15,7 @@ public class EarthquakeDetail {
     private float mag;
     private long time;
     private String alert;
-    private EarthquakeLocation coordinates;
+//    private EarthquakeLocation coordinates;
 
     public EarthquakeDetail() {
     }
@@ -56,11 +56,11 @@ public class EarthquakeDetail {
         return alert;
     }
 
-    public EarthquakeLocation getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(EarthquakeLocation coordinates) {
-        this.coordinates = coordinates;
-    }
+//    public EarthquakeLocation getCoordinates() {
+//        return coordinates;
+//    }
+//
+//    public void setCoordinates(EarthquakeLocation coordinates) {
+//        this.coordinates = coordinates;
+//    }
 }
