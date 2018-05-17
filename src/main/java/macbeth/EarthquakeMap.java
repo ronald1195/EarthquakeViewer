@@ -67,10 +67,8 @@ public class EarthquakeMap {
                 continue;
             Point point = new Point(event.getPoint().getLongitude(), event.getPoint().getLatitude(), SpatialReferences.getWgs84());
             SimpleMarkerSymbol dot;
-            if (event.getDetail().getMag() < 4.0)
-                dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.BLUE), 12);
-            else
-                dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(Color.RED), 12);
+            Color color = determainColor(event);
+            dot = new SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, ColorUtil.colorToArgb(color), 12);
 
             Graphic graphic = new Graphic(point, dot);
             graphicsOverlay.getGraphics().add(graphic);
@@ -119,6 +117,17 @@ public class EarthquakeMap {
 
     public int getEarthquakeCount() {
         return earthquakeTable.size();
+    }
+
+    private Color determainColor(EarthquakeEvent event) {
+        Color color;
+        if (event.getDetail().getMag() < 4) {
+            color = Color.BLUE;
+        }
+        else {
+            color = Color.RED;
+        }
+        return color;
     }
 
 }
