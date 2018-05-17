@@ -15,7 +15,6 @@ public class EarthquakeDetail {
     private float mag;
     private long time;
     private String alert;
-//    private EarthquakeLocation coordinates;
 
     public EarthquakeDetail() {
     }
