@@ -36,7 +36,7 @@ public class EarthquakeLocation {
      * @return - The depth
      */
     public long getDepth() {
-        return 0; // Need to fix this... https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+        return depth; // Need to fix this... https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
     }
 
 }
