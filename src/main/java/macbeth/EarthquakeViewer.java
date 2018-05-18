@@ -29,8 +29,8 @@ public class EarthquakeViewer extends Application {
         Scene scene = new Scene(stackPane);
 
         // set size, and add scene to stage
-        stage.setWidth(400);
-        stage.setHeight(400);
+        stage.setWidth(1000);
+        stage.setHeight(800);
         stage.setScene(scene);
         stage.show();
 
